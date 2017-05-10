@@ -1,3 +1,42 @@
 <resources>
-    <string name="app_name">ESA_Noteboard</string>
+    <string name="app_name">Noteboard</string>
+    <!-- Startpage -->
+    <string name="title_note_overview">Notizen Übersicht</string>
+    <string name="txt_notes">Notizen</string>
+
+    <!-- Optionmenu -->
+    <string name="txt_edit">Bearbeiten</string>
+    <string name="txt_delete">Löschen</string>
+    <string name="txt_send">Senden</string>
+
+    <!-- Note edit -->
+    <string name="title_note_edit">Notiz erfassen/bearbeiten</string>
+    <string name="txt_information">Informationen</string>
+    <string name="txt_details">Details</string>
+    <string name="txt_additional_information">Zusätzliche Angaben</string>
+    <string name="lbl_title">Titel</string>
+    <string name="lbl_description">Beschreibung</string>
+    <string name="lbl_keyword">Stichwort</string>
+    <string name="lbl_createdate">Erfassungsdatum</string>
+    <string name="lbl_createplace">Erfassungsort</string>
+    <string name="btn_record_sound">Soundaufnahme</string>
+    <string name="btn_manage_pictures">Bilder verwalten</string>
+
+    <!-- Record Sound -->
+    <string name="title_record_sound">Soundaufnahme für</string>
+    <string name="btn_start_recording">Aufnahme starten</string>
+    <string name="btn_end_recording">Aufnahme beenden</string>
+    <string name="btn_play_recording">Aufnahme abspielen</string>
+
+    <!-- Search -->
+    <string name="title_search">Notizen durchsuchen</string>
+    <string name="lbl_searchtext">Suchtext</string>
+
+    <!-- Manage Pictures -->
+    <string name="title_manage_pictures">Bilder verwalten für</string>
+
+    <!-- send note -->
+    <string name="title_send_note">Notiz versenden</string>
+    <string name="lbl_select_recipient">Auswahl Empfänger</string>
+    <string name="btn_send_note">Notiz senden</string>
 </resources>
