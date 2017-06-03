@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Noteboard</string>
+    <string name="btn_end_recording">End recording</string>
+    <string name="btn_manage_pictures">Manage pictures</string>
+    <string name="btn_play_recording">Play recording</string>
+    <string name="btn_record_sound">Recording</string>
+    <string name="btn_send_note">Send note</string>
+    <string name="btn_start_recording">Start recording</string>
+    <string name="lbl_createdate">Createdate</string>
+    <string name="lbl_createplace">Createplace</string>
+    <string name="lbl_description">Description</string>
+    <string name="lbl_keyword">Keyword</string>
+    <string name="lbl_searchtext">Searchphrase</string>
+    <string name="lbl_select_recipient">Select receiver</string>
+    <string name="lbl_title">Title</string>
+    <string name="title_manage_pictures">Manage pictures for</string>
+    <string name="title_note_edit">Create/Edit note</string>
+    <string name="title_note_overview">Note overview</string>
+    <string name="title_record_sound">Recording for</string>
+    <string name="title_search">Search note</string>
+    <string name="title_send_note">Send note</string>
+    <string name="txt_additional_information">Additional informations</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_details">Details</string>
+    <string name="txt_edit">Edit</string>
+    <string name="txt_information">Informations</string>
+    <string name="txt_notes">Notes</string>
+    <string name="txt_send">Send</string>
+</resources>
