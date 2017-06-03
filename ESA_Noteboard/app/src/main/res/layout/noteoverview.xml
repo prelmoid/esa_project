@@ -4,11 +4,11 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/topToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_bright"
+        android:layout_height="58dp"
+        android:background="@color/colorPrimaryDark"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
+        android:titleTextColor="#ffffff">
+    </android.support.v7.widget.Toolbar>
 </LinearLayout>
