@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="esa.ffhs.ch.esa_noteboard.gui.Noteoverview"
+            android:name="esa.ffhs.ch.esa_noteboard.noteboard.gui.Noteoverview"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

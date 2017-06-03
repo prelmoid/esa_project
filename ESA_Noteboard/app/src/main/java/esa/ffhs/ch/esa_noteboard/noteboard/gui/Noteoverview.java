@@ -1,4 +1,4 @@
-package esa.ffhs.ch.esa_noteboard.gui;
+package esa.ffhs.ch.esa_noteboard.noteboard.gui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

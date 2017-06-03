@@ -11,7 +11,7 @@
     <string name="txt_search">Suchen</string>
     <string name="txt_new">Neue Notiz</string>
 
-    <!-- Note edit -->
+    <!-- Notes edit -->
     <string name="title_note_edit">Notiz erfassen/bearbeiten</string>
     <string name="txt_information">Informationen</string>
     <string name="txt_details">Details</string>
@@ -37,7 +37,7 @@
     <!-- Manage Pictures -->
     <string name="title_manage_pictures">Bilder verwalten für</string>
 
-    <!-- send note -->
+    <!-- send Notes -->
     <string name="title_send_note">Notiz versenden</string>
     <string name="lbl_select_recipient">Auswahl Empfänger</string>
     <string name="btn_send_note">Notiz senden</string>
