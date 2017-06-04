@@ -1,6 +1,7 @@
 package esa.ffhs.ch.esa_noteboard.noteboard.db;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -11,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseNotes extends SQLiteOpenHelper {
 
     // Datenbankversion
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 4;
     // Datenbankname
     private static final String DB_NAME = "noteboard";
     //Instanz
@@ -46,6 +47,7 @@ public class DatabaseNotes extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //Tabellen erstellen
         db.execSQL(NotesTbl.SQL_CREATE);
+        db.execSQL(NotesTbl.STMT_INSERT_TEST);
     }
 
     @Override

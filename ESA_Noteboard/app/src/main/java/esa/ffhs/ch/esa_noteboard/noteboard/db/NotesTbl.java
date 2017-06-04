@@ -63,6 +63,9 @@ public final class NotesTbl implements NotesColumns {
     //WHERE-Bedingung für Abfrage über ID
     public static final String WHERE_ID_EQUALS = ID + "=?";
 
+    //TEST DATEN ERSTELLEN
+    public static final String STMT_INSERT_TEST = "INSERT INTO " + TABLE_NAME + "(" + TITLE + "," + CREATEDATE +") VALUES('NOTE1',123124), ('NOTE2',123142)";
+
     //Klasse für Konstanten, somit keine Objekterzeugung vorgesehen
     private NotesTbl() {
 
