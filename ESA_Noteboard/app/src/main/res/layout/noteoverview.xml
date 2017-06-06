@@ -2,28 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    >
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/topToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:background="@color/colorPrimaryDark"
-        android:minHeight="?attr/actionBarSize"
-        android:titleTextColor="#ffffff">
-    </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/topToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@color/colorPrimaryDark"
+            android:minHeight="?attr/actionBarSize"
+            android:titleTextColor="#ffffff">
+        </android.support.v7.widget.Toolbar>
 
-    <ListView
-        android:id="@+id/overviewList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:dividerHeight="1dp"
-        android:padding="10dp"></ListView>
+        <ListView
+            android:id="@+id/overviewList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:dividerHeight="1dp"
+            android:padding="10dp"
+            android:scrollbars="horizontal|vertical"
+           android:visibility="visible"></ListView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/emptyView"
-        android:text="Keine Daten vorhanden"
-        />
 </LinearLayout>

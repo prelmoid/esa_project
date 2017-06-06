@@ -1,6 +1,8 @@
 package esa.ffhs.ch.esa_noteboard.noteboard.gui;
 
 
+import android.app.Activity;
+import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -36,18 +38,18 @@ public class Noteoverview extends AppCompatActivity {
         initListView(savedInstanceState);
 
 
-        setSupportActionBar(mTopToolbar);
+        //setSupportActionBar(mTopToolbar);
     }
 
     public void initListView(Bundle savedInstanceState) {
         mListView = (ListView) findViewById(R.id.overviewList);
-        mListView.setEmptyView(findViewById(R.id.emptyView));
+//        mListView.setEmptyView(findViewById(R.id.emptyView));
 
         Cursor cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT idnotes as _id, title, createdate FROM notes ORDER BY createdate DESC",null);
         int anz = cNotes.getCount();
         //Test, wieviele Rrecords in notes existieren
-        String anzString = Integer.toString(anz);
-        Log.d("notes","Anzahl Records: "+anzString);
+        //String anzString = Integer.toString(anz);
+        //Log.d("notes","Anzahl Records: "+anzString);
 
         mListAdapter = new SimpleCursorAdapter(this, R.layout.listview_note_layout, cNotes, new String[]{"_id",
                 "title", "createdate"}, new int[]{R.id.tvCode, R.id.tvTitle, R.id.tvCreatedate}, 0);
