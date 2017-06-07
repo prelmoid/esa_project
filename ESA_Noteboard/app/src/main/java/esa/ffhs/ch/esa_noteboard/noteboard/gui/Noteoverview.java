@@ -1,13 +1,10 @@
 package esa.ffhs.ch.esa_noteboard.noteboard.gui;
 
 
-import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.View;
 import android.widget.ListView;
@@ -18,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import esa.ffhs.ch.esa_noteboard.R;
 import esa.ffhs.ch.esa_noteboard.noteboard.db.DatabaseNotes;
-import esa.ffhs.ch.esa_noteboard.noteboard.db.NotesColumns;
 
 /**
  * Created by Benjamin Kaeslin on 03.06.2017.
