@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -57,6 +59,7 @@ public class Noteoverview extends AppCompatActivity {
         //mListAdapter.notifyDataSetChanged();
 
         mListView.setAdapter(mListAdapter);
+        registerForContextMenu(mListView);
     }
 
     public void initToolBar() {
@@ -88,6 +91,29 @@ public class Noteoverview extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        //menu.setHeaderTitle("Select The Action");
+        menu.add(0, v.getId(), 0, getText(R.string.txt_edit));//groupId, itemId, order, title
+        menu.add(0, v.getId(), 0, getText(R.string.txt_send));
+        menu.add(0, v.getId(), 0, getText(R.string.txt_delete));
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getTitle()==getText(R.string.txt_edit)){
+            Toast.makeText(getApplicationContext(),"bearbeiten",Toast.LENGTH_LONG).show();
+        } else if(item.getTitle()==getText(R.string.txt_send)){
+            Toast.makeText(getApplicationContext(),"sende",Toast.LENGTH_LONG).show();
+        } else if(item.getTitle()==getText(R.string.txt_delete)) {
+            Toast.makeText(getApplicationContext(), "löschen", Toast.LENGTH_LONG).show();
+        }else{
+            return false;
+        }
+        return true;
     }
 }
 
