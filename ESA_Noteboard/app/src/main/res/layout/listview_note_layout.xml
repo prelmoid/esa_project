@@ -9,8 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
         android:textColor="@android:color/holo_blue_bright"
-        android:layout_centerVertical="true" />
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/tvTitle"

@@ -18,10 +18,10 @@
             android:id="@+id/overviewList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:dividerHeight="1dp"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="false"
             android:padding="10dp"
-            android:scrollbars="horizontal|vertical"
-           android:visibility="visible"></ListView>
+            android:scrollbars="horizontal|vertical"></ListView>
 
 </LinearLayout>
