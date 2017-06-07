@@ -15,7 +15,7 @@
     <string name="lbl_select_recipient">Select receiver</string>
     <string name="lbl_title">Title</string>
     <string name="title_manage_pictures">Manage pictures for</string>
-    <string name="title_note_edit">Create/Edit note</string>
+    <string name="title_note_edit">Edit note</string>
     <string name="title_note_overview">Note overview</string>
     <string name="title_record_sound">Recording for</string>
     <string name="title_search">Search note</string>
@@ -29,4 +29,6 @@
     <string name="txt_send">Send</string>
     <string name="txt_search">Search</string>
     <string name="txt_new">New note</string>
+    <string name="txt_save">Save</string>
+    <string name="title_note_new">Create note</string>
 </resources>

@@ -10,9 +10,11 @@
     <string name="txt_send">Senden</string>
     <string name="txt_search">Suchen</string>
     <string name="txt_new">Neue Notiz</string>
+    <string name="txt_save">Speichern</string>
 
     <!-- Notes edit -->
-    <string name="title_note_edit">Notiz erfassen/bearbeiten</string>
+    <string name="title_note_edit">Notiz bearbeiten</string>
+    <string name="title_note_new">Notiz erfassen</string>
     <string name="txt_information">Informationen</string>
     <string name="txt_details">Details</string>
     <string name="txt_additional_information">Zusätzliche Angaben</string>

@@ -3,6 +3,7 @@ package esa.ffhs.ch.esa_noteboard.noteboard.gui;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -38,9 +39,6 @@ public class Noteoverview extends AppCompatActivity {
         setContentView(R.layout.noteoverview);
         initToolBar();
         initListView(savedInstanceState);
-
-
-        //setSupportActionBar(mTopToolbar);
     }
 
     public void initListView(Bundle savedInstanceState) {
@@ -66,9 +64,6 @@ public class Noteoverview extends AppCompatActivity {
         mTopToolbar = (Toolbar) findViewById(R.id.topToolbar);
         mTopToolbar.setTitle(R.string.title_note_overview);
         setSupportActionBar(mTopToolbar);
-
-        //mTopToolbar.setNavigationIcon(R.drawable.ic_keyboard_backspace_white_24dp);
-
     }
 
     @Override
@@ -106,6 +101,9 @@ public class Noteoverview extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item){
         if(item.getTitle()==getText(R.string.txt_edit)){
             Toast.makeText(getApplicationContext(),"bearbeiten",Toast.LENGTH_LONG).show();
+            Intent myIntent = new Intent(Noteoverview.this, Noteedit.class);
+            myIntent.putExtra("idnotes", 1); //Optional parameters
+            Noteoverview.this.startActivity(myIntent);
         } else if(item.getTitle()==getText(R.string.txt_send)){
             Toast.makeText(getApplicationContext(),"sende",Toast.LENGTH_LONG).show();
         } else if(item.getTitle()==getText(R.string.txt_delete)) {

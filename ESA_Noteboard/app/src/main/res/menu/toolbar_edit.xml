@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".noteboard.gui.Noteedit">
+
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="300"
+        android:title="@string/txt_search"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/action_new"
+        android:orderInCategory="301"
+        android:title="@string/txt_new"
+        android:icon="@drawable/ic_note_add_white_24dp"
+        app:showAsAction="ifRoom"></item>
+
+    <item
+        android:id="@+id/action_send"
+        android:orderInCategory="302"
+        android:title="@string/txt_send"
+        android:icon="@drawable/ic_send_white_24dp"
+        app:showAsAction="ifRoom"></item>
+
+</menu>
