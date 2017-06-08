@@ -13,7 +13,7 @@ public final class NotesTbl implements NotesColumns {
     * SQL Anweisung zur Schemadefinition
      */
     public static final String SQL_CREATE = "CREATE TABLE notes (" +
-            "idnotes INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "title TEXT NOT NULL," +
             "note TEXT," +
             "keywords TEXT," +

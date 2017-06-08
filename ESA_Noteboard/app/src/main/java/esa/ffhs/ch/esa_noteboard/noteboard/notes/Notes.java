@@ -31,11 +31,15 @@ public class Notes {
             int createdateIdx = cursor.getColumnIndex(NotesColumns.CREATEDATE);
             int locationIdx = cursor.getColumnIndex(NotesColumns.LOCATION);
             //Daten aus Cursor in Objekt laden
-            this.idnotes = cursor.getInt(idnotexIdx);
-            this.title = cursor.getString(titleIdx);
-            this.note = cursor.getString(noteIdx);
-            this.keywords = cursor.getString(keywordsIdx);
-            this.createdate = new Date(cursor.getLong(createdateIdx)*1000);
+            if( cursor != null && cursor.moveToFirst() ){
+                this.idnotes = cursor.getInt(idnotexIdx);
+                this.title = cursor.getString(titleIdx);
+                this.note = cursor.getString(noteIdx);
+                this.keywords = cursor.getString(keywordsIdx);
+                this.createdate = new Date(cursor.getLong(createdateIdx)*1000);
+                cursor.close();
+            }
+
         }
         catch (Exception e)
         {

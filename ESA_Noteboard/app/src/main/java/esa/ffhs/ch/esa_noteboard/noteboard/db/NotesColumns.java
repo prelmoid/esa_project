@@ -7,7 +7,7 @@ package esa.ffhs.ch.esa_noteboard.noteboard.db;
 public interface NotesColumns {
 
     //Primärschlüssel
-    String ID = "idnotes";
+    String ID = "_id";
 
     //Pflichtfeld: Titel der Notiz - text
     String TITLE = "title";

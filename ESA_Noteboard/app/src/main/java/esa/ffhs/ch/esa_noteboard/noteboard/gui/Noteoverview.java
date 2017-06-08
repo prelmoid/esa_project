@@ -43,9 +43,10 @@ public class Noteoverview extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.overviewList);
 //        mListView.setEmptyView(findViewById(R.id.emptyView));
 
-        cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT idnotes as _id, title, createdate FROM notes ORDER BY createdate DESC",null);
-        int anz = cNotes.getCount();
+        cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, createdate FROM notes ORDER BY createdate DESC",null);
+
         //Test, wieviele Rrecords in notes existieren
+        //int anz = cNotes.getCount();
         //String anzString = Integer.toString(anz);
         //Log.d("notes","Anzahl Records: "+anzString);
 
@@ -84,7 +85,6 @@ public class Noteoverview extends AppCompatActivity {
         }else if(id == R.id.action_new){
             Intent myIntent = new Intent(Noteoverview.this, Noteedit.class);
             Noteoverview.this.startActivity(myIntent);
-
         }
 
         return super.onOptionsItemSelected(item);
