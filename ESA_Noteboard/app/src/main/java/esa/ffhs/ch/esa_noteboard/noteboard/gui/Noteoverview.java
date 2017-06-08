@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class Noteoverview extends AppCompatActivity {
     private ListView mListView;
     private SimpleCursorAdapter mListAdapter;
     private DatabaseNotes mDbNotes;
+    private Cursor cNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class Noteoverview extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.overviewList);
 //        mListView.setEmptyView(findViewById(R.id.emptyView));
 
-        Cursor cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT idnotes as _id, title, createdate FROM notes ORDER BY createdate DESC",null);
+        cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT idnotes as _id, title, createdate FROM notes ORDER BY createdate DESC",null);
         int anz = cNotes.getCount();
         //Test, wieviele Rrecords in notes existieren
         //String anzString = Integer.toString(anz);
@@ -79,6 +81,10 @@ public class Noteoverview extends AppCompatActivity {
         if (id == R.id.action_search) {
             Toast.makeText(Noteoverview.this, "Search Action clicked", Toast.LENGTH_LONG).show();
             return true;
+        }else if(id == R.id.action_new){
+            Intent myIntent = new Intent(Noteoverview.this, Noteedit.class);
+            Noteoverview.this.startActivity(myIntent);
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -95,15 +101,18 @@ public class Noteoverview extends AppCompatActivity {
     }
     @Override
     public boolean onContextItemSelected(MenuItem item){
+        //Eindeutige ID der Note aus dem Cursor lesen, zum weitergeben
+        int idnotes = cNotes.getInt(0);
         if(item.getTitle()==getText(R.string.txt_edit)){
-            Toast.makeText(getApplicationContext(),"bearbeiten",Toast.LENGTH_LONG).show();
+            //Test Nachricht
+            //Toast.makeText(getApplicationContext(),Integer.toString(idnotes),Toast.LENGTH_LONG).show();
             Intent myIntent = new Intent(Noteoverview.this, Noteedit.class);
-            myIntent.putExtra("idnotes", 1); //Optional parameters
+            myIntent.putExtra("idnotes", Integer.toString(idnotes)); //Optional parameters
             Noteoverview.this.startActivity(myIntent);
         } else if(item.getTitle()==getText(R.string.txt_send)){
-            Toast.makeText(getApplicationContext(),"sende",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),getText(R.string.txt_send),Toast.LENGTH_LONG).show();
         } else if(item.getTitle()==getText(R.string.txt_delete)) {
-            Toast.makeText(getApplicationContext(), "löschen", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getText(R.string.txt_delete), Toast.LENGTH_LONG).show();
         }else{
             return false;
         }

@@ -1,6 +1,10 @@
 package esa.ffhs.ch.esa_noteboard.noteboard.notes;
 
+import android.database.Cursor;
+
 import java.util.Date;
+
+import esa.ffhs.ch.esa_noteboard.noteboard.db.NotesColumns;
 
 /**
  * Created by Benjamin Kaeslin on 03.06.2017.
@@ -9,20 +13,34 @@ import java.util.Date;
 public class Notes {
     private int idnotes;
     private String title;
-    private String description;
+    private String note;
     private String keywords;
     private Date createdate;
-    private String place;
+    private String location;
 
     public Notes() {
     }
 
-    public Notes(int idnotes, String title, String description, String keywords, String place) {
-        this.idnotes = idnotes;
-        this.title = title;
-        this.description = description;
-        this.keywords = keywords;
-        this.place = place;
+    public Notes(Cursor cursor){
+        try
+        {   //Columnindex aus Cursor ermitteln
+            int idnotexIdx = cursor.getColumnIndex(NotesColumns.ID);
+            int titleIdx = cursor.getColumnIndex(NotesColumns.TITLE);
+            int noteIdx = cursor.getColumnIndex(NotesColumns.NOTE);
+            int keywordsIdx = cursor.getColumnIndex(NotesColumns.KEYWORDS);
+            int createdateIdx = cursor.getColumnIndex(NotesColumns.CREATEDATE);
+            int locationIdx = cursor.getColumnIndex(NotesColumns.LOCATION);
+            //Daten aus Cursor in Objekt laden
+            this.idnotes = cursor.getInt(idnotexIdx);
+            this.title = cursor.getString(titleIdx);
+            this.note = cursor.getString(noteIdx);
+            this.keywords = cursor.getString(keywordsIdx);
+            this.createdate = new Date(cursor.getLong(createdateIdx)*1000);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void setIdnotes(int idnotes){
@@ -41,12 +59,12 @@ public class Notes {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getNote() {
+        return note;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public String getKeywords() {
@@ -65,12 +83,12 @@ public class Notes {
         this.createdate = createdate;
     }
 
-    public String getPlace() {
-        return place;
+    public String getLocation() {
+        return location;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
 }
