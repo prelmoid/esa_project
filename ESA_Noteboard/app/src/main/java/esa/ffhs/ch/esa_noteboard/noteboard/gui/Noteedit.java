@@ -53,11 +53,17 @@ public class Noteedit extends AppCompatActivity {
             note = new Notes();
         } else {
             //bestehendes Notes Objekt laden
-
-            Toast.makeText(getApplicationContext(), "idnotes übergeben", Toast.LENGTH_LONG).show();
+            loadNotes(idnotes);
+            Toast.makeText(getApplicationContext(), "idnotes übergeben: "+idnotes, Toast.LENGTH_LONG).show();
             initView();
         }
 
+    }
+
+    @Override
+    public void onPause(){
+        saveNote();
+        super.onPause();
     }
 
     private void loadNotes(String idnotes) {
@@ -117,7 +123,13 @@ public class Noteedit extends AppCompatActivity {
             loadNotes(lIdNotes);
         } else {
             //existing Note, UPDATE
-
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(NotesColumns.TITLE, note.getTitle());
+            contentValues.put(NotesColumns.NOTE, note.getNote());
+            contentValues.put(NotesColumns.KEYWORDS, note.getKeywords());
+            contentValues.put(NotesColumns.LOCATION, note.getLocation());
+            contentValues.put(NotesColumns.CREATEDATE,createDate);
+            mDbNotes.getWritableDatabase().update(NotesTbl.TABLE_NAME,contentValues,"_id="+note.getIdnotes(),null);
         }
 
     }

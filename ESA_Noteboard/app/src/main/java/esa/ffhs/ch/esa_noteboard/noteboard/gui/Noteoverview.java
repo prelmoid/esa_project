@@ -27,7 +27,6 @@ public class Noteoverview extends AppCompatActivity {
     private ListView mListView;
     private SimpleCursorAdapter mListAdapter;
     private DatabaseNotes mDbNotes;
-    private Cursor cNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +38,25 @@ public class Noteoverview extends AppCompatActivity {
         initListView(savedInstanceState);
     }
 
+    public void onResume() {
+        super.onResume();
+        Cursor newCursor= mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, createdate FROM notes ORDER BY createdate DESC",null);
+        mListAdapter.swapCursor(newCursor);
+        mListAdapter.notifyDataSetChanged();
+    }
+
     public void initListView(Bundle savedInstanceState) {
         mListView = (ListView) findViewById(R.id.overviewList);
 //        mListView.setEmptyView(findViewById(R.id.emptyView));
 
-        cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, createdate FROM notes ORDER BY createdate DESC",null);
+        Cursor cursor = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, createdate FROM notes ORDER BY createdate DESC",null);
 
         //Test, wieviele Rrecords in notes existieren
-        //int anz = cNotes.getCount();
+        //int anz = cursor.getCount();
         //String anzString = Integer.toString(anz);
         //Log.d("notes","Anzahl Records: "+anzString);
 
-        mListAdapter = new SimpleCursorAdapter(this, R.layout.listview_note_layout, cNotes, new String[]{"_id",
+        mListAdapter = new SimpleCursorAdapter(this, R.layout.listview_note_layout, cursor, new String[]{"_id",
                 "title", "createdate"}, new int[]{R.id.tvCode, R.id.tvTitle, R.id.tvCreatedate}, 0);
 
         //mListAdapter.notifyDataSetChanged();
@@ -71,6 +77,7 @@ public class Noteoverview extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar_top, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -102,7 +109,12 @@ public class Noteoverview extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item){
         //Eindeutige ID der Note aus dem Cursor lesen, zum weitergeben
-        int idnotes = cNotes.getInt(0);
+        AdapterView.AdapterContextMenuInfo info=
+                (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        int itemPosition = info.position;
+        Cursor cursor = mListAdapter.getCursor();
+        cursor.moveToPosition(itemPosition);
+        int idnotes = cursor.getInt(0);
         if(item.getTitle()==getText(R.string.txt_edit)){
             //Test Nachricht
             //Toast.makeText(getApplicationContext(),Integer.toString(idnotes),Toast.LENGTH_LONG).show();
@@ -110,7 +122,7 @@ public class Noteoverview extends AppCompatActivity {
             myIntent.putExtra("idnotes", Integer.toString(idnotes)); //Optional parameters
             Noteoverview.this.startActivity(myIntent);
         } else if(item.getTitle()==getText(R.string.txt_send)){
-            Toast.makeText(getApplicationContext(),getText(R.string.txt_send),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),getText(R.string.txt_send)+"idnotes"+String.valueOf(idnotes),Toast.LENGTH_LONG).show();
         } else if(item.getTitle()==getText(R.string.txt_delete)) {
             Toast.makeText(getApplicationContext(), getText(R.string.txt_delete), Toast.LENGTH_LONG).show();
         }else{
