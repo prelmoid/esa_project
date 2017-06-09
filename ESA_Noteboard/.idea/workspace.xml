@@ -11,9 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5649b49b-2734-4444-8afe-91682795c985" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/DatabaseNotes.java" afterPath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/DatabaseNotes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesTbl.java" afterPath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesTbl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteedit.java" afterPath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteedit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteoverview.java" afterPath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteoverview.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/notes/Notes.java" afterPath="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/notes/Notes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/noteedit.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/noteedit.xml" />
     </list>
     <ignored path="ESA_Noteboard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,19 +62,19 @@
       <file leaf-file-name="Noteoverview.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteoverview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+            <state relative-caret-position="256">
+              <caret line="44" column="125" selection-start-line="44" selection-start-column="125" selection-end-line="44" selection-end-column="125" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2462#2490#0" expanded="true" />
-                <element signature="e#3654#3680#0" expanded="true" />
-                <element signature="e#3748#3774#0" expanded="true" />
-                <element signature="e#3811#3839#0" expanded="true" />
-                <element signature="e#4316#4342#0" expanded="true" />
-                <element signature="e#4738#4764#0" expanded="true" />
-                <element signature="e#4818#4844#0" expanded="true" />
-                <element signature="e#4941#4969#0" expanded="true" />
-                <element signature="e#5025#5053#0" expanded="true" />
+                <element signature="e#2756#2784#0" expanded="true" />
+                <element signature="e#3948#3974#0" expanded="true" />
+                <element signature="e#4042#4068#0" expanded="true" />
+                <element signature="e#4105#4133#0" expanded="true" />
+                <element signature="e#4610#4636#0" expanded="true" />
+                <element signature="e#5032#5058#0" expanded="true" />
+                <element signature="e#5112#5138#0" expanded="true" />
+                <element signature="e#5235#5263#0" expanded="true" />
+                <element signature="e#5319#5347#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,13 +83,13 @@
       <file leaf-file-name="Noteedit.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteedit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+            <state relative-caret-position="361">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5594#5618#0" expanded="true" />
-                <element signature="e#5850#6101#0" expanded="true" />
-                <element signature="e#6100#6101#0" expanded="true" />
+                <element signature="e#5995#6019#0" expanded="true" />
+                <element signature="e#6251#6502#0" expanded="true" />
+                <element signature="e#6501#6502#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,18 +98,8 @@
       <file leaf-file-name="DatabaseNotes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/DatabaseNotes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-741">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NotesColumns.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesColumns.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="198">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,8 +108,8 @@
       <file leaf-file-name="NotesTbl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesTbl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-396">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="474">
+              <caret line="66" column="182" selection-start-line="66" selection-start-column="182" selection-end-line="66" selection-end-column="182" />
               <folding />
             </state>
           </provider>
@@ -124,12 +118,25 @@
       <file leaf-file-name="Notes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/notes/Notes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1864#1865#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#1929#1930#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SQLiteCursor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/database/sqlite/SQLiteCursor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,19 +144,19 @@
       <file leaf-file-name="noteedit.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/noteedit.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4884">
-              <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
+            <state relative-caret-position="693">
+              <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
               <folding>
                 <element signature="e#761#786#0" expanded="true" />
                 <element signature="e#1506#1525#0" expanded="true" />
                 <element signature="e#2210#2235#0" expanded="true" />
                 <element signature="e#2918#2939#0" expanded="true" />
                 <element signature="e#3442#3463#0" expanded="true" />
-                <element signature="e#4183#4207#0" expanded="true" />
-                <element signature="e#4897#4922#0" expanded="true" />
-                <element signature="e#5432#5468#0" expanded="true" />
-                <element signature="e#5987#6013#0" expanded="true" />
-                <element signature="e#6176#6205#0" expanded="true" />
+                <element signature="e#4183#4208#0" expanded="true" />
+                <element signature="e#4908#4932#0" expanded="true" />
+                <element signature="e#5391#5427#0" expanded="true" />
+                <element signature="e#5946#5972#0" expanded="true" />
+                <element signature="e#6135#6164#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,23 +171,6 @@
             <state relative-caret-position="297">
               <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar_top.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/toolbar_top.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-              <folding>
-                <element signature="e#371#391#0" expanded="true" />
-                <element signature="e#596#613#0" expanded="true" />
-                <element signature="e#821#839#0" expanded="true" />
-              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -2008,9 +1998,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesColumns.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesTbl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/DatabaseNotes.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/notes/Notes.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/noteedit.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteoverview.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/notes/Notes.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteedit.java" />
       </list>
     </option>
@@ -2593,7 +2583,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="2762" height="1790" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2668011" sideWeight="0.49848944" order="13" side_tool="false" content_ui="tabs" />
@@ -2601,7 +2591,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862905" sideWeight="0.5022659" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32862905" sideWeight="0.49773413" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32862905" sideWeight="0.49773413" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49244714" order="9" side_tool="false" content_ui="tabs" />
@@ -2616,7 +2606,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39919356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39919356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2647,7 +2637,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2950,48 +2940,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/DatabaseNotes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesColumns.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="45">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/notes/Notes.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/DatabaseNotes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1864#1865#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="198">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/database/sqlite/SQLiteCursor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/noteedit.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4884">
-          <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
+        <state relative-caret-position="693">
+          <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
           <folding>
             <element signature="e#761#786#0" expanded="true" />
             <element signature="e#1506#1525#0" expanded="true" />
             <element signature="e#2210#2235#0" expanded="true" />
             <element signature="e#2918#2939#0" expanded="true" />
             <element signature="e#3442#3463#0" expanded="true" />
-            <element signature="e#4183#4207#0" expanded="true" />
-            <element signature="e#4897#4922#0" expanded="true" />
-            <element signature="e#5432#5468#0" expanded="true" />
-            <element signature="e#5987#6013#0" expanded="true" />
-            <element signature="e#6176#6205#0" expanded="true" />
+            <element signature="e#4183#4208#0" expanded="true" />
+            <element signature="e#4908#4932#0" expanded="true" />
+            <element signature="e#5391#5427#0" expanded="true" />
+            <element signature="e#5946#5972#0" expanded="true" />
+            <element signature="e#6135#6164#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3001,40 +2988,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/db/NotesTbl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        <state relative-caret-position="474">
+          <caret line="66" column="182" selection-start-line="66" selection-start-column="182" selection-end-line="66" selection-end-column="182" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteoverview.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+        <state relative-caret-position="256">
+          <caret line="44" column="125" selection-start-line="44" selection-start-column="125" selection-end-line="44" selection-end-column="125" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2462#2490#0" expanded="true" />
-            <element signature="e#3654#3680#0" expanded="true" />
-            <element signature="e#3748#3774#0" expanded="true" />
-            <element signature="e#3811#3839#0" expanded="true" />
-            <element signature="e#4316#4342#0" expanded="true" />
-            <element signature="e#4738#4764#0" expanded="true" />
-            <element signature="e#4818#4844#0" expanded="true" />
-            <element signature="e#4941#4969#0" expanded="true" />
-            <element signature="e#5025#5053#0" expanded="true" />
+            <element signature="e#2756#2784#0" expanded="true" />
+            <element signature="e#3948#3974#0" expanded="true" />
+            <element signature="e#4042#4068#0" expanded="true" />
+            <element signature="e#4105#4133#0" expanded="true" />
+            <element signature="e#4610#4636#0" expanded="true" />
+            <element signature="e#5032#5058#0" expanded="true" />
+            <element signature="e#5112#5138#0" expanded="true" />
+            <element signature="e#5235#5263#0" expanded="true" />
+            <element signature="e#5319#5347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/notes/Notes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#1929#1930#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/esa/ffhs/ch/esa_noteboard/noteboard/gui/Noteedit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+        <state relative-caret-position="361">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5594#5618#0" expanded="true" />
-            <element signature="e#5850#6101#0" expanded="true" />
-            <element signature="e#6100#6101#0" expanded="true" />
+            <element signature="e#5995#6019#0" expanded="true" />
+            <element signature="e#6251#6502#0" expanded="true" />
+            <element signature="e#6501#6502#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -3,8 +3,10 @@ package esa.ffhs.ch.esa_noteboard.noteboard.gui;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,7 +42,7 @@ public class Noteoverview extends AppCompatActivity {
 
     public void onResume() {
         super.onResume();
-        Cursor newCursor= mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, createdate FROM notes ORDER BY createdate DESC",null);
+        Cursor newCursor= mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, strftime('%d.%m.%Y %H:%M:%S',createdate,'unixepoch') as createdate FROM notes ORDER BY createdate DESC",null);
         mListAdapter.swapCursor(newCursor);
         mListAdapter.notifyDataSetChanged();
     }
@@ -49,12 +51,14 @@ public class Noteoverview extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.overviewList);
 //        mListView.setEmptyView(findViewById(R.id.emptyView));
 
-        Cursor cursor = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, createdate FROM notes ORDER BY createdate DESC",null);
+        Cursor cursor = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, strftime('%d.%m.%Y %H:%M:%S',createdate,'unixepoch') as createdate FROM notes ORDER BY createdate DESC",null);
 
         //Test, wieviele Rrecords in notes existieren
         //int anz = cursor.getCount();
         //String anzString = Integer.toString(anz);
         //Log.d("notes","Anzahl Records: "+anzString);
+        //String databaseString = DatabaseUtils.dumpCursorToString(cursor);
+        //Log.d("cursor",databaseString);
 
         mListAdapter = new SimpleCursorAdapter(this, R.layout.listview_note_layout, cursor, new String[]{"_id",
                 "title", "createdate"}, new int[]{R.id.tvCode, R.id.tvTitle, R.id.tvCreatedate}, 0);

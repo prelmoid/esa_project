@@ -116,16 +116,16 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:paddingRight="10dp"
-            android:text="@string/lbl_createdate"
+            android:text="@string/lbl_createplace"
             />
 
         <EditText
-            android:id="@+id/editDate"
+            android:id="@+id/editLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="5"
-            android:inputType="datetime"
+            android:inputType="textPersonName"
             android:text="" />
     </LinearLayout>
     <LinearLayout
@@ -137,16 +137,15 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:paddingRight="10dp"
-            android:text="@string/lbl_createplace"
+            android:text="@string/lbl_createdate"
             />
 
-        <EditText
-            android:id="@+id/editLocation"
+        <TextView
+            android:id="@+id/editDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="5"
-            android:inputType="textPersonName"
             android:text="" />
     </LinearLayout>
     <TextView

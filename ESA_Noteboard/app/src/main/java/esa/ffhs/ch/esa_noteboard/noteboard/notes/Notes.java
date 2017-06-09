@@ -2,6 +2,7 @@ package esa.ffhs.ch.esa_noteboard.noteboard.notes;
 
 import android.database.Cursor;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import esa.ffhs.ch.esa_noteboard.noteboard.db.NotesColumns;
@@ -19,6 +20,7 @@ public class Notes {
     private String location;
 
     public Notes() {
+        this.createdate = new Date(System.currentTimeMillis());
     }
 
     public Notes(Cursor cursor){
@@ -36,7 +38,7 @@ public class Notes {
                 this.title = cursor.getString(titleIdx);
                 this.note = cursor.getString(noteIdx);
                 this.keywords = cursor.getString(keywordsIdx);
-                this.createdate = new Date(cursor.getLong(createdateIdx)*1000);
+                this.createdate = new Date(cursor.getLong(createdateIdx)*1000L);
                 cursor.close();
             }
 
@@ -85,6 +87,10 @@ public class Notes {
 
     public void setCreatedate(Date createdate) {
         this.createdate = createdate;
+    }
+
+    public void setCreatedate(Long miliseconds) {
+        this.createdate.setTime(miliseconds);
     }
 
     public String getLocation() {

@@ -18,7 +18,7 @@ public final class NotesTbl implements NotesColumns {
             "note TEXT," +
             "keywords TEXT," +
             "location TEXT," +
-            "createdate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP);";
+            "createdate int);";
 
     /*
     * Standardsortierung für die Tabelle der Notizen
@@ -64,7 +64,7 @@ public final class NotesTbl implements NotesColumns {
     public static final String WHERE_ID_EQUALS = ID + "=?";
 
     //TEST DATEN ERSTELLEN
-    public static final String STMT_INSERT_TEST = "INSERT INTO " + TABLE_NAME + "(" + TITLE + "," + CREATEDATE +") VALUES('NOTE1',datetime()), ('NOTE2',datetime())";
+    public static final String STMT_INSERT_TEST = "INSERT INTO " + TABLE_NAME + "(" + TITLE + "," + CREATEDATE +") VALUES('NOTE1',strftime('%s','now')), ('NOTE2',strftime('%s','now'))";
 
     //Klasse für Konstanten, somit keine Objekterzeugung vorgesehen
     private NotesTbl() {
