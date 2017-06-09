@@ -36,6 +36,7 @@
     <!-- Search -->
     <string name="title_search">Notizen durchsuchen</string>
     <string name="lbl_searchtext">Suchtext</string>
+    <string name="txt_empty_search">Für diese Suche gab es leider kein Ergebniss.</string>
 
     <!-- Manage Pictures -->
     <string name="title_manage_pictures">Bilder verwalten für</string>

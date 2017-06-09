@@ -32,4 +32,5 @@
     <string name="txt_save">Save</string>
     <string name="title_note_new">Create note</string>
     <string name="txt_deleted">Note deleted</string>
+    <string name="txt_empty_search">There wasn\'t any result for this searchterm.</string>
 </resources>

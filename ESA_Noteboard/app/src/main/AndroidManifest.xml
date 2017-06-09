@@ -21,9 +21,10 @@
 
         <activity android:name=".noteboard.gui.Noteedit"
             android:label="@string/app_name">
-
         </activity>
-
+        <activity android:name=".noteboard.gui.Notesearch"
+            android:label="@string/app_name">
+        </activity>
 
     </application>
 

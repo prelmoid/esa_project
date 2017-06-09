@@ -96,8 +96,9 @@ public class Noteoverview extends AppCompatActivity {
         //Testaktion für den Moment
         //TODO korrekte Verlinkung zur Suche
         if (id == R.id.action_search) {
-            Toast.makeText(Noteoverview.this, "Search Action clicked", Toast.LENGTH_LONG).show();
-            return true;
+            //Toast.makeText(Noteoverview.this, "Search Action clicked", Toast.LENGTH_LONG).show();
+            Intent myIntent = new Intent(Noteoverview.this, Notesearch.class);
+            Noteoverview.this.startActivity(myIntent);
         }else if(id == R.id.action_new){
             Intent myIntent = new Intent(Noteoverview.this, Noteedit.class);
             Noteoverview.this.startActivity(myIntent);

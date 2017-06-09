@@ -62,14 +62,14 @@ public class Noteedit extends AppCompatActivity {
         } else {
             //bestehendes Notes Objekt laden
             loadNotes(idnotes);
-            Toast.makeText(getApplicationContext(), "idnotes übergeben: "+idnotes, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "idnotes übergeben: " + idnotes, Toast.LENGTH_LONG).show();
             initView();
         }
 
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         saveNote();
         super.onPause();
     }
@@ -115,8 +115,8 @@ public class Noteedit extends AppCompatActivity {
         TextView tEditLocation = (TextView) findViewById(R.id.editLocation);
         note.setLocation(tEditLocation.getText().toString());
 
-        Long createDate = note.getCreatedate().getTime()/1000;
-        Log.d("time",createDate.toString());
+        Long createDate = note.getCreatedate().getTime() / 1000;
+        Log.d("time", createDate.toString());
         if (note.getIdnotes() < 1) {
             //new Note, INSERT
             String insert = "INSERT INTO notes (title, note, keywords, location, createdate) VALUES('" + note.getTitle() + "','" + note.getNote() + "','" + note.getKeywords() + "','" + note.getLocation() + "','" + note.getCreatedate() + "')";
@@ -125,7 +125,7 @@ public class Noteedit extends AppCompatActivity {
             contentValues.put(NotesColumns.NOTE, note.getNote());
             contentValues.put(NotesColumns.KEYWORDS, note.getKeywords());
             contentValues.put(NotesColumns.LOCATION, note.getLocation());
-            contentValues.put(NotesColumns.CREATEDATE,createDate);
+            contentValues.put(NotesColumns.CREATEDATE, createDate);
             long idnew = mDbNotes.getWritableDatabase().insert(NotesTbl.TABLE_NAME, null, contentValues);
             String lIdNotes = String.valueOf(idnew);
             loadNotes(lIdNotes);
@@ -136,8 +136,8 @@ public class Noteedit extends AppCompatActivity {
             contentValues.put(NotesColumns.NOTE, note.getNote());
             contentValues.put(NotesColumns.KEYWORDS, note.getKeywords());
             contentValues.put(NotesColumns.LOCATION, note.getLocation());
-            contentValues.put(NotesColumns.CREATEDATE,createDate);
-            mDbNotes.getWritableDatabase().update(NotesTbl.TABLE_NAME,contentValues,"_id="+note.getIdnotes(),null);
+            contentValues.put(NotesColumns.CREATEDATE, createDate);
+            mDbNotes.getWritableDatabase().update(NotesTbl.TABLE_NAME, contentValues, "_id=" + note.getIdnotes(), null);
         }
 
     }
@@ -148,11 +148,10 @@ public class Noteedit extends AppCompatActivity {
         setSupportActionBar(mTopToolbar);
 
         mTopToolbar.setNavigationIcon(R.drawable.ic_keyboard_backspace_white_24dp);
-        //Navigation Click für Back to previous View
+        //Navigation Klickt zur vorhergehenden View
         mTopToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "your icon was clicked", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -170,11 +169,10 @@ public class Noteedit extends AppCompatActivity {
         // Abhandlung der Klicks auf die Actionbar.
         int id = item.getItemId();
 
-        //Testaktion für den Moment
-        //TODO korrekte Verlinkung zur Suche
+        //Speichern auslösen
         if (id == R.id.action_save) {
             saveNote();
-            Toast.makeText(Noteedit.this, "Save action clicked", Toast.LENGTH_LONG).show();
+            //Toast.makeText(Noteedit.this, "Save action clicked", Toast.LENGTH_LONG).show();
             return true;
         }
 
