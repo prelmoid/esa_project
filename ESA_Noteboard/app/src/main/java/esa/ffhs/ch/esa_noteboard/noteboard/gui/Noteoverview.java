@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import esa.ffhs.ch.esa_noteboard.R;
 import esa.ffhs.ch.esa_noteboard.noteboard.db.DatabaseNotes;
+import esa.ffhs.ch.esa_noteboard.noteboard.db.NotesTbl;
 
 /**
  * Created by Benjamin Kaeslin on 03.06.2017.
@@ -40,11 +41,15 @@ public class Noteoverview extends AppCompatActivity {
         initListView(savedInstanceState);
     }
 
-    public void onResume() {
-        super.onResume();
+    private void reloadData(){
         Cursor newCursor= mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, strftime('%d.%m.%Y %H:%M:%S',createdate,'unixepoch') as createdate FROM notes ORDER BY createdate DESC",null);
         mListAdapter.swapCursor(newCursor);
         mListAdapter.notifyDataSetChanged();
+    }
+
+    public void onResume() {
+        super.onResume();
+        reloadData();
     }
 
     public void initListView(Bundle savedInstanceState) {
@@ -128,7 +133,10 @@ public class Noteoverview extends AppCompatActivity {
         } else if(item.getTitle()==getText(R.string.txt_send)){
             Toast.makeText(getApplicationContext(),getText(R.string.txt_send)+"idnotes"+String.valueOf(idnotes),Toast.LENGTH_LONG).show();
         } else if(item.getTitle()==getText(R.string.txt_delete)) {
-            Toast.makeText(getApplicationContext(), getText(R.string.txt_delete), Toast.LENGTH_LONG).show();
+            String[] params = new String[]{Integer.toString(idnotes)};
+            mDbNotes.getWritableDatabase().delete(NotesTbl.TABLE_NAME,"_id="+Integer.toString(idnotes),null);
+            reloadData();
+            Toast.makeText(getApplicationContext(), getText(R.string.txt_deleted), Toast.LENGTH_LONG).show();
         }else{
             return false;
         }

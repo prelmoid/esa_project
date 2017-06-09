@@ -31,4 +31,5 @@
     <string name="txt_new">New note</string>
     <string name="txt_save">Save</string>
     <string name="title_note_new">Create note</string>
+    <string name="txt_deleted">Note deleted</string>
 </resources>

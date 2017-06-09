@@ -38,6 +38,7 @@ public class Notes {
                 this.title = cursor.getString(titleIdx);
                 this.note = cursor.getString(noteIdx);
                 this.keywords = cursor.getString(keywordsIdx);
+                this.location = cursor.getString(locationIdx);
                 this.createdate = new Date(cursor.getLong(createdateIdx)*1000L);
                 cursor.close();
             }

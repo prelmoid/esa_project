@@ -7,6 +7,7 @@
     <!-- Optionmenu -->
     <string name="txt_edit">Bearbeiten</string>
     <string name="txt_delete">Löschen</string>
+    <string name="txt_deleted">Notiz wurde gelöscht</string>
     <string name="txt_send">Senden</string>
     <string name="txt_search">Suchen</string>
     <string name="txt_new">Neue Notiz</string>
