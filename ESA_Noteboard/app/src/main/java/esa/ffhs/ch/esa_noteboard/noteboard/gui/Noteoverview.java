@@ -3,10 +3,8 @@ package esa.ffhs.ch.esa_noteboard.noteboard.gui;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,8 +24,6 @@ import esa.ffhs.ch.esa_noteboard.noteboard.db.NotesTbl;
 
 public class Noteoverview extends AppCompatActivity {
 
-    private Toolbar mTopToolbar;
-    private ListView mListView;
     private SimpleCursorAdapter mListAdapter;
     private DatabaseNotes mDbNotes;
 
@@ -52,10 +48,8 @@ public class Noteoverview extends AppCompatActivity {
         reloadData();
     }
 
-    public void initListView(Bundle savedInstanceState) {
-        mListView = (ListView) findViewById(R.id.overviewList);
-//        mListView.setEmptyView(findViewById(R.id.emptyView));
-
+    private void initListView(Bundle savedInstanceState) {
+        ListView mListView = (ListView) findViewById(R.id.overviewList);
         Cursor cursor = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, strftime('%d.%m.%Y %H:%M:%S',createdate,'unixepoch') as createdate FROM notes ORDER BY createdate DESC",null);
 
         //Test, wieviele Rrecords in notes existieren
@@ -72,10 +66,11 @@ public class Noteoverview extends AppCompatActivity {
 
         mListView.setAdapter(mListAdapter);
         registerForContextMenu(mListView);
+        cursor.close();
     }
 
-    public void initToolBar() {
-        mTopToolbar = (Toolbar) findViewById(R.id.topToolbar);
+    private void initToolBar() {
+        Toolbar mTopToolbar = (Toolbar) findViewById(R.id.topToolbar);
         mTopToolbar.setTitle(R.string.title_note_overview);
         setSupportActionBar(mTopToolbar);
     }
@@ -93,8 +88,7 @@ public class Noteoverview extends AppCompatActivity {
         // Abhandlung der Klicks auf die Actionbar.
         int id = item.getItemId();
 
-        //Testaktion für den Moment
-        //TODO korrekte Verlinkung zur Suche
+        //Aufruf der entsprechenden Activity
         if (id == R.id.action_search) {
             //Toast.makeText(Noteoverview.this, "Search Action clicked", Toast.LENGTH_LONG).show();
             Intent myIntent = new Intent(Noteoverview.this, Notesearch.class);
@@ -134,7 +128,6 @@ public class Noteoverview extends AppCompatActivity {
         } else if(item.getTitle()==getText(R.string.txt_send)){
             Toast.makeText(getApplicationContext(),getText(R.string.txt_send)+"idnotes"+String.valueOf(idnotes),Toast.LENGTH_LONG).show();
         } else if(item.getTitle()==getText(R.string.txt_delete)) {
-            String[] params = new String[]{Integer.toString(idnotes)};
             mDbNotes.getWritableDatabase().delete(NotesTbl.TABLE_NAME,"_id="+Integer.toString(idnotes),null);
             reloadData();
             Toast.makeText(getApplicationContext(), getText(R.string.txt_deleted), Toast.LENGTH_LONG).show();

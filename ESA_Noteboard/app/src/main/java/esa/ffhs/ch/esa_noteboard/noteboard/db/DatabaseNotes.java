@@ -1,7 +1,6 @@
 package esa.ffhs.ch.esa_noteboard.noteboard.db;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -18,7 +17,7 @@ public class DatabaseNotes extends SQLiteOpenHelper {
     //Instanz
     private static DatabaseNotes sINSTANCE;
     //Lockobjekt
-    private static Object sLOCK = "";
+    private static final Object sLOCK = "";
 
     /*
     * Instanz der Datenbank erhalten

@@ -9,6 +9,6 @@
         android:orderInCategory="300"
         android:title="@string/txt_save"
         android:icon="@drawable/ic_save_white_24dp"
-        app:showAsAction="ifRoom"></item>
+        app:showAsAction="ifRoom" />
 
 </menu>

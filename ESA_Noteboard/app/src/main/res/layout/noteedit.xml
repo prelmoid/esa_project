@@ -43,7 +43,7 @@
 
         <EditText
             android:id="@+id/editTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="5"
@@ -63,7 +63,7 @@
 
         <EditText
             android:id="@+id/editNote"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="5"
@@ -84,7 +84,7 @@
 
         <EditText
             android:id="@+id/editKeywords"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="5"
@@ -121,7 +121,7 @@
 
         <EditText
             android:id="@+id/editLocation"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="5"
@@ -142,7 +142,7 @@
 
         <TextView
             android:id="@+id/editDate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"
             android:ems="5"

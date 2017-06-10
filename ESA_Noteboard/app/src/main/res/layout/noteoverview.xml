@@ -22,6 +22,6 @@
             android:footerDividersEnabled="true"
             android:headerDividersEnabled="false"
             android:padding="10dp"
-            android:scrollbars="horizontal|vertical"></ListView>
+            android:scrollbars="horizontal|vertical" />
 
 </LinearLayout>

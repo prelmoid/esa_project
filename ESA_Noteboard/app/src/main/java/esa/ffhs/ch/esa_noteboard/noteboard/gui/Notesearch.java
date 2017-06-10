@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.FilterQueryProvider;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
@@ -29,9 +28,7 @@ public class Notesearch extends AppCompatActivity {
 
     private ListView lvListView;
     private SimpleCursorAdapter scaListAdapter;
-    private SearchView svSearchView;
     private DatabaseNotes dbNotes;
-    private Toolbar tbTopToolbar;
 
 
     @Override
@@ -55,9 +52,9 @@ public class Notesearch extends AppCompatActivity {
 
         lvListView.setAdapter(scaListAdapter);
         registerForContextMenu(lvListView);
-
+        cursor.close();
         // Die Searchview verknüpfen und den Listener registrieren
-        svSearchView = (SearchView) findViewById(R.id.searchView);
+        SearchView svSearchView = (SearchView) findViewById(R.id.searchView);
         svSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -68,7 +65,7 @@ public class Notesearch extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 //listAdapter.getFilter().filter(newText);
                 try {
-                    // String mQuery = "SELECT  * FROM " + DatabaseContract.SongBook.TABLE_NAME+" WHERE _ID LIKE '%"+newText+ "%'";
+                    // Suche aufbauen
                     String[] selectionArgs;
                     selectionArgs= new String[] {"%"+ newText + "%", "%"+ newText + "%", "%"+ newText + "%", "%"+ newText + "%" };
                     Cursor cursor = dbNotes.getReadableDatabase().rawQuery("SELECT _id, title, strftime('%d.%m.%Y %H:%M:%S',createdate,'unixepoch') as createdate FROM notes  WHERE note LIKE ? OR title LIKE ? OR keywords LIKE ? OR location LIKE ? ORDER BY createdate DESC", selectionArgs);
@@ -79,16 +76,17 @@ public class Notesearch extends AppCompatActivity {
                     TextView text = (TextView) findViewById(R.id.empty);
                     text.setText(R.string.txt_empty_search);
                     lvListView.setEmptyView(text);
-
+                    cursor.close();
                 }catch (Exception e){
                     e.printStackTrace();
                 }
+
                 return true;
             }
         });
     }
-    public void initToolBar() {
-        tbTopToolbar = (Toolbar) findViewById(R.id.topToolbar);
+    private void initToolBar() {
+        Toolbar tbTopToolbar = (Toolbar) findViewById(R.id.topToolbar);
         tbTopToolbar.setTitle(R.string.title_search);
         setSupportActionBar(tbTopToolbar);
         tbTopToolbar.setNavigationIcon(R.drawable.ic_keyboard_backspace_white_24dp);
@@ -99,6 +97,12 @@ public class Notesearch extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Die toolbar_top zur Menübar hinzufügen.
+        getMenuInflater().inflate(R.menu.toolbar_search, menu);
+        return true;
     }
 
     @Override
@@ -128,7 +132,6 @@ public class Notesearch extends AppCompatActivity {
         } else if(item.getTitle()==getText(R.string.txt_send)){
             Toast.makeText(getApplicationContext(),getText(R.string.txt_send)+"idnotes"+String.valueOf(idnotes),Toast.LENGTH_LONG).show();
         } else if(item.getTitle()==getText(R.string.txt_delete)) {
-            String[] params = new String[]{Integer.toString(idnotes)};
             dbNotes.getWritableDatabase().delete(NotesTbl.TABLE_NAME,"_id="+Integer.toString(idnotes),null);
             reloadData();
             Toast.makeText(getApplicationContext(), getText(R.string.txt_deleted), Toast.LENGTH_LONG).show();

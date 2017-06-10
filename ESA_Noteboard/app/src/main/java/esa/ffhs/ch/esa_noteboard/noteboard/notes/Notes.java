@@ -2,7 +2,6 @@ package esa.ffhs.ch.esa_noteboard.noteboard.notes;
 
 import android.database.Cursor;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import esa.ffhs.ch.esa_noteboard.noteboard.db.NotesColumns;
@@ -33,7 +32,7 @@ public class Notes {
             int createdateIdx = cursor.getColumnIndex(NotesColumns.CREATEDATE);
             int locationIdx = cursor.getColumnIndex(NotesColumns.LOCATION);
             //Daten aus Cursor in Objekt laden
-            if( cursor != null && cursor.moveToFirst() ){
+            if(cursor.moveToFirst() ){
                 this.idnotes = cursor.getInt(idnotexIdx);
                 this.title = cursor.getString(titleIdx);
                 this.note = cursor.getString(noteIdx);

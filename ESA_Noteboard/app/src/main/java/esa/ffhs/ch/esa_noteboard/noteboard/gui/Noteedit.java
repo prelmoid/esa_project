@@ -4,9 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -15,9 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Calendar;
-import java.util.Date;
 
 import esa.ffhs.ch.esa_noteboard.R;
 import esa.ffhs.ch.esa_noteboard.noteboard.db.DatabaseNotes;
@@ -30,9 +25,7 @@ import esa.ffhs.ch.esa_noteboard.noteboard.notes.Notes;
  */
 
 public class Noteedit extends AppCompatActivity {
-    private Toolbar mTopToolbar;
     private DatabaseNotes mDbNotes;
-    private Cursor cNotes;
     private Notes note;
 
     @Override
@@ -47,17 +40,11 @@ public class Noteedit extends AppCompatActivity {
         //Übergabe Parameter auslesen
         Intent intent = getIntent();
         String idnotes = intent.getStringExtra("idnotes");
-        //Übergabe mit Toast testen
-        //Toast.makeText(getApplicationContext(),idnotes,Toast.LENGTH_LONG).show();
-        //Übergabe testen
         if (idnotes == null) {
             //Leeres Notes Objekt erstellen
             note = new Notes();
             TextView tEditCreatedate = (TextView) findViewById(R.id.editDate);
-            SimpleDateFormat sdf = new SimpleDateFormat("YYYY-mm-dd HH:mm:ss");
-            String dateString = sdf.format(note.getCreatedate());
-
-            dateString = DateFormat.getDateTimeInstance().format(note.getCreatedate());
+            String dateString = DateFormat.getDateTimeInstance().format(note.getCreatedate());
             tEditCreatedate.setText(dateString);
         } else {
             //bestehendes Notes Objekt laden
@@ -76,8 +63,9 @@ public class Noteedit extends AppCompatActivity {
 
     private void loadNotes(String idnotes) {
         String[] params = new String[]{idnotes};
-        cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, note, keywords, location, createdate FROM notes WHERE _id = ?", params);
+        Cursor cNotes = mDbNotes.getReadableDatabase().rawQuery("SELECT _id, title, note, keywords, location, createdate FROM notes WHERE _id = ?", params);
         note = new Notes(cNotes);
+        cNotes.close();
     }
 
     private void initView() {
@@ -94,13 +82,12 @@ public class Noteedit extends AppCompatActivity {
         TextView tEditLocation = (TextView) findViewById(R.id.editLocation);
         tEditLocation.setText(note.getLocation());
 
-        TextView tEditCreatedate = (TextView) findViewById(R.id.editDate);
-        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-mm-dd HH:mm:ss");
-        String dateString = sdf.format(note.getCreatedate());
 
-        dateString = DateFormat.getDateTimeInstance().format(note.getCreatedate());
+        TextView tEditCreatedate = (TextView) findViewById(R.id.editDate);
+        String dateString = DateFormat.getDateTimeInstance().format(note.getCreatedate());
         tEditCreatedate.setText(dateString);
     }
+
 
     private void saveNote() {
         TextView tEditTitle = (TextView) findViewById(R.id.editTitle);
@@ -119,7 +106,6 @@ public class Noteedit extends AppCompatActivity {
         Log.d("time", createDate.toString());
         if (note.getIdnotes() < 1) {
             //new Note, INSERT
-            String insert = "INSERT INTO notes (title, note, keywords, location, createdate) VALUES('" + note.getTitle() + "','" + note.getNote() + "','" + note.getKeywords() + "','" + note.getLocation() + "','" + note.getCreatedate() + "')";
             ContentValues contentValues = new ContentValues();
             contentValues.put(NotesColumns.TITLE, note.getTitle());
             contentValues.put(NotesColumns.NOTE, note.getNote());
@@ -143,7 +129,7 @@ public class Noteedit extends AppCompatActivity {
     }
 
     private void initToolBar() {
-        mTopToolbar = (Toolbar) findViewById(R.id.topToolbarEdit);
+        Toolbar mTopToolbar = (Toolbar) findViewById(R.id.topToolbarEdit);
         mTopToolbar.setTitle(R.string.title_note_edit);
         setSupportActionBar(mTopToolbar);
 
